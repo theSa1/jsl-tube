@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { abbreviateNumber } from "~/utils/abbreviateNumber";
 import { api } from "~/utils/api";
+import { NextSeo } from "next-seo";
 
 const WatchPage = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const WatchPage = () => {
 
   return (
     <>
+      <NextSeo title={`${video.data.title} | JSL Tube`} />
       <div className="overflow-hidden rounded-lg shadow-lg">
         <iframe
           className="aspect-video w-full"
