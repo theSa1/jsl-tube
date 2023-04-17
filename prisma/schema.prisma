@@ -1,0 +1,63 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider     = "mysql"
+    url          = env("DATABASE_URL")
+    relationMode = "prisma"
+}
+
+model Channel {
+    createdAt         DateTime            @default(now())
+    id                String              @id @default(cuid())
+    name              String              @db.VarChar(511)
+    channelID         String              @unique
+    handle            String              @unique
+    profile           String
+    subscribers       Int
+    views             Int
+    videos            Video[]
+    since             DateTime
+    hourlyChannelData HourlyChannelData[]
+    dailyChannelData  DailyChannelData[]
+}
+
+model Video {
+    createdAt   DateTime @default(now())
+    id          Int      @id @default(autoincrement())
+    title       String
+    videoID     String   @unique
+    channelID   String
+    description String   @db.VarChar(5001)
+    duration    Int
+    channel     Channel  @relation(fields: [channelID], references: [channelID])
+    views       Int
+    likes       Int
+    comments    Int
+    tags        String   @db.VarChar(5001)
+    published   DateTime
+    thumbnail   String
+}
+
+model HourlyChannelData {
+    createdAt           DateTime @default(now())
+    id                  Int      @id @default(autoincrement())
+    channelID           String
+    channel             Channel  @relation(fields: [channelID], references: [channelID])
+    subscribers         Int
+    views               Int
+    subscribersIncrease Int
+    viewsIncrease       Int
+}
+
+model DailyChannelData {
+    createdAt           DateTime @default(now())
+    id                  Int      @id @default(autoincrement())
+    channelID           String
+    channel             Channel  @relation(fields: [channelID], references: [channelID])
+    subscribers         Int
+    views               Int
+    subscribersIncrease Int
+    viewsIncrease       Int
+}
