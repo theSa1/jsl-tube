@@ -24,7 +24,7 @@ export const VideoCard: React.FC<{
 }) => {
   return (
     <div>
-      <Link href={`https://www.youtube.com/watch?v=${videoId}`}>
+      <Link href={`/watch?v=${videoId}`}>
         <div className="relative aspect-video overflow-hidden rounded-lg">
           <Image
             height={720}
