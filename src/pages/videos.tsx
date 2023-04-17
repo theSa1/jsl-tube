@@ -18,7 +18,7 @@ const VideosPage = () => {
     <>
       <h1 className="mb-2 text-xl font-bold text-white">All Videos</h1>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {videos.data?.videos.map((video) => (
           <VideoCard
             key={video.id}
