@@ -49,7 +49,7 @@ export const VideoCard: React.FC<{
           />
         </Link>
         <div>
-          <Link href={`https://www.youtube.com/watch?v=${videoId}`}>
+          <Link href={`/watch?v=${videoId}`}>
             <h2 className="font-bold leading-tight text-white">{title}</h2>
           </Link>
           <Link

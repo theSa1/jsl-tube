@@ -23,6 +23,15 @@ export const Layout: React.FC<{
               SA1
             </Link>
           </p>
+          <p className="mt-1 text-center text-white">
+            Contribute on{" "}
+            <Link
+              href="https://github.com/theSa1/jsl-tube"
+              className="font-bold text-[#4fd1c5] underline"
+            >
+              GitHub
+            </Link>
+          </p>
         </div>
       </div>
     </div>
