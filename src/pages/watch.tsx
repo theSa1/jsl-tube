@@ -64,7 +64,7 @@ const WatchPage = () => {
       {/* Description */}
       <div className="mt-5 rounded-lg bg-[#252525] p-5 shadow-lg">
         <h2 className="text-xl font-bold text-white">Description</h2>
-        <p className="mt-3 whitespace-pre text-white">
+        <p className="mt-3 overflow-hidden whitespace-pre-wrap text-white">
           {video.data.description}
         </p>
       </div>
