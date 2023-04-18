@@ -62,7 +62,7 @@ const Home: NextPage = () => {
       </div>
 
       <h1 className="mb-2 mt-8 text-xl font-bold text-white">Statistics</h1>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid gap-5 lg:grid-cols-2">
         <div className="rounded-lg bg-[#252525] p-5">
           <h2 className="text-2xl font-bold text-white">
             {statistics.data?.totalChannels}
