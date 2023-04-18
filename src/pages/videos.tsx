@@ -1,7 +1,7 @@
 import moment from "moment";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { VideoCard } from "~/components/VideoCard";
+import { VideoCard, VideoCardSkeleton } from "~/components/VideoCard";
 import { abbreviateNumber } from "~/utils/abbreviateNumber";
 import { api } from "~/utils/api";
 import { convertSecondsToTime } from "~/utils/convertSecondsToTime";
@@ -19,6 +19,19 @@ const VideosPage = () => {
       <h1 className="mb-2 text-xl font-bold text-white">All Videos</h1>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {videos.isLoading && (
+          <>
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+            <VideoCardSkeleton />
+          </>
+        )}
         {videos.data?.videos.map((video) => (
           <VideoCard
             key={video.id}

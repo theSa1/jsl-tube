@@ -5,6 +5,32 @@ import { abbreviateNumber } from "~/utils/abbreviateNumber";
 import { api } from "~/utils/api";
 import { NextSeo } from "next-seo";
 
+const SkeletonPage = () => {
+  return (
+    <>
+      <div className="aspect-video w-full animate-pulse rounded-lg bg-[#252525] shadow-lg"></div>
+      <div className="mt-5 h-8 w-1/2 animate-pulse rounded-lg bg-[#252525]"></div>
+      <div className="mt-3 flex gap-3">
+        <div className="h-4 w-12 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-16 animate-pulse rounded-lg bg-[#252525]"></div>
+      </div>
+      <div className="mt-5 h-20 animate-pulse rounded-lg bg-[#252525]"></div>
+      <div className="mt-3 flex gap-3">
+        <div className="h-4 w-20 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-24 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-20 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-12 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-20 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-24 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-10 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-28 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-20 animate-pulse rounded-lg bg-[#252525]"></div>
+        <div className="h-4 w-24 animate-pulse rounded-lg bg-[#252525]"></div>
+      </div>
+    </>
+  );
+};
+
 const WatchPage = () => {
   const router = useRouter();
   const { v: videoId } = router.query;
@@ -14,7 +40,7 @@ const WatchPage = () => {
   const video = api.videos.watch.useQuery(videoId);
 
   if (!video.data) {
-    return <h1 className="text-white">Loading...</h1>;
+    return <SkeletonPage />;
   }
 
   return (

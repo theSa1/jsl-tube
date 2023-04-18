@@ -63,3 +63,28 @@ export const ChannelCard: React.FC<{
     </div>
   );
 };
+
+export const ChannelCardSkeleton: React.FC = () => {
+  return (
+    <div className="animate-pulse overflow-hidden rounded-lg bg-[#252525] p-5">
+      <div className="grid grid-cols-[2.25rem,auto] gap-3">
+        <div className="aspect-square w-full rounded-full bg-[#333]"></div>
+        <div>
+          <div className="h-4 bg-[#333]"></div>
+          <div className="mt-1 h-2 bg-[#333]"></div>
+        </div>
+      </div>
+      <div className="mt-3 grid grid-cols-3 gap-3">
+        <div>
+          <div className="h-2 bg-[#333]"></div>
+          <div className="mt-1 h-4 bg-[#333]"></div>
+        </div>
+        <div>
+          <div className="h-2 bg-[#333]"></div>
+          <div className="mt-1 h-4 bg-[#333]"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  );
+};
