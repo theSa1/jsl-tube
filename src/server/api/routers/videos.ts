@@ -5,7 +5,7 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 export const videosRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
     const videos = await ctx.prisma.video.findMany({
-      take: 30,
+      take: 9,
       orderBy: {
         published: "desc",
       },
