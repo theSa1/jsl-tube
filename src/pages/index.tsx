@@ -11,6 +11,7 @@ import { convertSecondsToTime } from "~/utils/convertSecondsToTime";
 const Home: NextPage = () => {
   const videos = api.videos.getAll.useQuery();
   const channels = api.channels.getAll.useQuery();
+  const statistics = api.statistics.get.useQuery();
 
   return (
     <>
@@ -58,6 +59,52 @@ const Home: NextPage = () => {
             since={channel.since}
           />
         ))}
+      </div>
+
+      <h1 className="mb-2 mt-8 text-xl font-bold text-white">Statistics</h1>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalChannels}
+          </h2>
+          <p className="text-white">Channels</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalVideos.toLocaleString()}
+          </h2>
+          <p className="text-white">Videos</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalViews?.toLocaleString()}
+          </h2>
+          <p className="text-white">Views</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalSubscribers?.toLocaleString()}
+          </h2>
+          <p className="text-white">Subscribers</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalLikes?.toLocaleString()}
+          </h2>
+          <p className="text-white">Likes</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {statistics.data?.totalComments?.toLocaleString()}
+          </h2>
+          <p className="text-white">Comments</p>
+        </div>
+        <div className="rounded-lg bg-[#252525] p-5">
+          <h2 className="text-2xl font-bold text-white">
+            {Math.round((statistics.data?.totalDuration || 0) / 60 / 60)} Hours
+          </h2>
+          <p className="text-white">Total Video Duration</p>
+        </div>
       </div>
     </>
   );
