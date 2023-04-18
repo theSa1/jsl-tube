@@ -5,6 +5,7 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import { DefaultSeo } from "next-seo";
 import { Layout } from "~/components/Layout";
+import Script from "next/script";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -38,6 +39,19 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           },
         ]}
       />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-P0R770425V"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P0R770425V');
+        `}
+      </Script>
       <Component {...pageProps} />
     </Layout>
   );
