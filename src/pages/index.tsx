@@ -21,8 +21,10 @@ const Home: NextPage = () => {
       />
 
       <div className="flex items-center justify-between">
-        <h1 className="mb-2 text-xl font-bold text-white">Latest Videos</h1>
-        <Link href="/videos" className="text-white underline">
+        <h1 className="mb-2 text-xl font-bold text-text-primary">
+          Latest Videos
+        </h1>
+        <Link href="/videos" className="text-text-primary underline">
           View All
         </Link>
       </div>
@@ -57,7 +59,9 @@ const Home: NextPage = () => {
         ))}
       </div>
 
-      <h1 className="mb-2 mt-8 text-xl font-bold text-white">All Channels</h1>
+      <h1 className="mb-2 mt-8 text-xl font-bold text-text-primary">
+        All Channels
+      </h1>
 
       <div className="grid gap-5 lg:grid-cols-2">
         {channels.isLoading && (
@@ -87,7 +91,9 @@ const Home: NextPage = () => {
         ))}
       </div>
 
-      <h1 className="mb-2 mt-8 text-xl font-bold text-white">Statistics</h1>
+      <h1 className="mb-2 mt-8 text-xl font-bold text-text-primary">
+        Statistics
+      </h1>
       <div className="grid gap-5 lg:grid-cols-2">
         {statistics.isLoading ? (
           <>
@@ -103,48 +109,48 @@ const Home: NextPage = () => {
           </>
         ) : (
           <>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalChannels}
               </h2>
-              <p className="text-white">Channels</p>
+              <p className="text-text-primary">Channels</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalVideos.toLocaleString()}
               </h2>
-              <p className="text-white">Videos</p>
+              <p className="text-text-primary">Videos</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalViews?.toLocaleString()}
               </h2>
-              <p className="text-white">Views</p>
+              <p className="text-text-primary">Views</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalSubscribers?.toLocaleString()}
               </h2>
-              <p className="text-white">Subscribers</p>
+              <p className="text-text-primary">Subscribers</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalLikes?.toLocaleString()}
               </h2>
-              <p className="text-white">Likes</p>
+              <p className="text-text-primary">Likes</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {statistics.data?.totalComments?.toLocaleString()}
               </h2>
-              <p className="text-white">Comments</p>
+              <p className="text-text-primary">Comments</p>
             </div>
-            <div className="rounded-lg bg-[#252525] p-5">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="rounded-lg bg-bg-card p-5">
+              <h2 className="text-2xl font-bold text-text-primary">
                 {Math.round((statistics.data?.totalDuration || 0) / 60 / 60)}{" "}
                 Hours
               </h2>
-              <p className="text-white">Total Video Duration</p>
+              <p className="text-text-primary">Total Video Duration</p>
             </div>
           </>
         )}

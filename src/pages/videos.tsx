@@ -16,7 +16,7 @@ const VideosPage = () => {
 
   return (
     <>
-      <h1 className="mb-2 text-xl font-bold text-white">All Videos</h1>
+      <h1 className="mb-2 text-xl font-bold text-text-primary">All Videos</h1>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {videos.isLoading && (
@@ -53,7 +53,7 @@ const VideosPage = () => {
         {videos.data?.isPrevPage && (
           <Link
             href={`/videos?page=${videos.data.page - 1}`}
-            className="rounded-md bg-[#252525] px-3 py-1 text-white"
+            className="rounded-md bg-bg-card px-3 py-1 text-text-primary"
           >
             Previous Page
           </Link>
@@ -61,7 +61,7 @@ const VideosPage = () => {
         {videos.data?.isNextPage && (
           <Link
             href={`/videos?page=${videos.data.page + 1}`}
-            className="rounded-md bg-[#252525] px-3 py-1 text-white"
+            className="rounded-md bg-bg-card px-3 py-1 text-text-primary"
           >
             Next Page
           </Link>

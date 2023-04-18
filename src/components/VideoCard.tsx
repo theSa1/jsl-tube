@@ -33,8 +33,8 @@ export const VideoCard: React.FC<{
             src={thumbnail}
             alt={title}
           />
-          <div className="absolute bottom-2 right-2 rounded bg-[#0f0f0f] bg-opacity-95 px-1 py-0.5">
-            <p className="text-xs text-white">{duration}</p>
+          <div className="absolute bottom-2 right-2 rounded bg-bg bg-opacity-95 px-1 py-0.5">
+            <p className="text-xs text-text-primary">{duration}</p>
           </div>
         </div>
       </Link>
@@ -50,15 +50,17 @@ export const VideoCard: React.FC<{
         </Link>
         <div>
           <Link href={`/watch?v=${videoId}`}>
-            <h2 className="font-bold leading-tight text-white">{title}</h2>
+            <h2 className="font-bold leading-tight text-text-primary">
+              {title}
+            </h2>
           </Link>
           <Link
-            className="text-xs leading-tight text-[#aaaaaa]"
+            className="text-xs leading-tight text-text-secondary"
             href={`https://www.youtube.com/channel/${channelId}`}
           >
             {channel}
           </Link>
-          <p className="text-xs leading-tight text-[#aaaaaa]">
+          <p className="text-xs leading-tight text-text-secondary">
             {views} • {timestamp}
           </p>
         </div>
@@ -70,13 +72,13 @@ export const VideoCard: React.FC<{
 export const VideoCardSkeleton: React.FC = () => {
   return (
     <div>
-      <div className="relative aspect-video animate-pulse overflow-hidden rounded-lg bg-[#252525]" />
+      <div className="relative aspect-video animate-pulse overflow-hidden rounded-lg bg-bg-card" />
       <div className="mt-3 grid grid-cols-[2.25rem,auto] gap-3">
-        <div className="aspect-square w-full animate-pulse rounded-full bg-[#252525]" />
+        <div className="aspect-square w-full animate-pulse rounded-full bg-bg-card" />
         <div>
-          <div className="h-4 w-1/2 animate-pulse bg-[#252525]" />
-          <div className="mt-1 h-3 w-1/3 animate-pulse bg-[#252525]" />
-          <div className="mt-1 h-3 w-1/4 animate-pulse bg-[#252525]" />
+          <div className="h-4 w-1/2 animate-pulse bg-bg-card" />
+          <div className="mt-1 h-3 w-1/3 animate-pulse bg-bg-card" />
+          <div className="mt-1 h-3 w-1/4 animate-pulse bg-bg-card" />
         </div>
       </div>
     </div>
